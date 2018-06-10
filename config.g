@@ -90,10 +90,10 @@ M106 P2 S0 I0 F4 H-1 L0.3; Set fan 1 value, PWM signal inversion and frequency. 
 
 ; K'tana Tools (Commented)
 -- JAP uncommented
-M563 P4 D0 H1 S"Ktana Single Right" ; Define tool 0, right side tool (single extruder)
+M563 P4 D1 H1 S"Ktana Single Right" ; Define tool 0, right side tool (single extruder)
 G10 P4 X0 Y0 Z0 ; Tool 0, set axis offsets
 G10 P4 S0 R0 ; Tool 0, set active (S0) & standy temp (R) of 0.
-; M563 P5 D1 H2 S"Ktana Single Left" ; Define tool 1, left side tool (single extruder)
+; M563 P5 D2 H2 S"Ktana Single Left" ; Define tool 1, left side tool (single extruder)
 ; G10 P5 X12.45 Y0 Z0 ; Tool 1, set axis offsets
 ; G10 P5 S0 R0 ; Tool 1, set active (S0) and standy temp (R) of 0
 -- end JAP uncommented
