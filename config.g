@@ -72,6 +72,17 @@ M106 P2 S0 I0 F4 H-1 L0.3; Set fan 1 value, PWM signal inversion and frequency. 
 ; Comment: Dual nozzle setup is done by creating seperate tools for each extruder, then switching between tools in slicer
 ; Comment: Left extruder has a +12.45 mm offset, considering right nozzle as origin
 
+        
+; K'tana Tools (Commented)
+; -- JAP uncommented		   
+M563 P0 D1 H1 S"Ktana Single Right" ; Define tool 0, right side tool (single extruder)
+G10 P0 X0 Y0 Z0 ; Tool 0, set axis offsets
+G10 P0 S0 R0 ; Tool 0, set active (S0) & standy temp (R) of 0.
+M563 P1 D2 H2 S"Ktana Single Left" ; Define tool 1, left side tool (single extruder)
+G10 P1 X12.45 Y0 Z0 ; Tool 1, set axis offsets
+G10 P1 S0 R0 ; Tool 1, set active (S0) and standy temp (R) of 0
+; -- end JAP uncommented
+
 ; Compound Nozzle Tools
 ; Mixing Tool T0
 ; -- JAP Comments start
@@ -87,16 +98,6 @@ M106 P2 S0 I0 F4 H-1 L0.3; Set fan 1 value, PWM signal inversion and frequency. 
 ; M563 P3 D1 H1 S"Mixing as Single Left" ; Define tool 4, mixing nozzle only using left motor
 ; M568 P3 S0 ; Turn off tool mixing
 ; -- JAP Comments end
-
-; K'tana Tools (Commented)
--- JAP uncommented
-M563 P4 D1 H1 S"Ktana Single Right" ; Define tool 0, right side tool (single extruder)
-G10 P4 X0 Y0 Z0 ; Tool 0, set axis offsets
-G10 P4 S0 R0 ; Tool 0, set active (S0) & standy temp (R) of 0.
-; M563 P5 D2 H2 S"Ktana Single Left" ; Define tool 1, left side tool (single extruder)
-; G10 P5 X12.45 Y0 Z0 ; Tool 1, set axis offsets
-; G10 P5 S0 R0 ; Tool 1, set active (S0) and standy temp (R) of 0
--- end JAP uncommented
 
 T0 ; Automatic tool select
 
