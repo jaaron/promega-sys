@@ -74,25 +74,29 @@ M106 P2 S0 I0 F4 H-1 L0.3; Set fan 1 value, PWM signal inversion and frequency. 
 
 ; Compound Nozzle Tools
 ; Mixing Tool T0
-M563 P0 D0:1 H1 S"Mixing" ; Define tool 2, left & right side tool, one heater (mixing extruder)
-G10 P0 X0 Y0 Z0 ; Tool 2, set axis offsets
-G10 P0 R0 S0 ; Tool 2, set active (S0) & standby temp (R0) at 0.
-M567 P0 E0.5:0.5 ; Set tool mix ratios for extruder
-M568 P0 S1 ; Turn on tool mixing for the extruder
-; Right Only T1
-M563 P2 D0 H1 S"Mixing as Single Right"; Define tool 3, mixing nozzle only using right motor
-M568 P2 S0 ; Turn off tool mixing
-; Left Only T2
-M563 P3 D1 H1 S"Mixing as Single Left" ; Define tool 4, mixing nozzle only using left motor
-M568 P3 S0 ; Turn off tool mixing
+; -- JAP Comments start
+; M563 P0 D0:1 H1 S"Mixing" ; Define tool 2, left & right side tool, one heater (mixing extruder)
+; G10 P0 X0 Y0 Z0 ; Tool 2, set axis offsets
+; G10 P0 R0 S0 ; Tool 2, set active (S0) & standby temp (R0) at 0.
+; M567 P0 E0.5:0.5 ; Set tool mix ratios for extruder
+; M568 P0 S1 ; Turn on tool mixing for the extruder
+; ; Right Only T1
+; M563 P2 D0 H1 S"Mixing as Single Right"; Define tool 3, mixing nozzle only using right motor
+; M568 P2 S0 ; Turn off tool mixing
+; ; Left Only T2
+; M563 P3 D1 H1 S"Mixing as Single Left" ; Define tool 4, mixing nozzle only using left motor
+; M568 P3 S0 ; Turn off tool mixing
+; -- JAP Comments end
 
 ; K'tana Tools (Commented)
-; M563 P4 D0 H1 S"Ktana Single Right" ; Define tool 0, right side tool (single extruder)
-; G10 P4 X0 Y0 Z0 ; Tool 0, set axis offsets
-; G10 P4 S0 R0 ; Tool 0, set active (S0) & standy temp (R) of 0.
-; M563 P5 D1 H2 S"Ktana Single Left" ; Define tool 1, left side tool (single extruder)
-; G10 P5 X12.45 Y0 Z0 ; Tool 1, set axis offsets
-; G10 P5 S0 R0 ; Tool 1, set active (S0) and standy temp (R) of 0
+-- JAP uncommented
+M563 P4 D0 H1 S"Ktana Single Right" ; Define tool 0, right side tool (single extruder)
+G10 P4 X0 Y0 Z0 ; Tool 0, set axis offsets
+G10 P4 S0 R0 ; Tool 0, set active (S0) & standy temp (R) of 0.
+M563 P5 D1 H2 S"Ktana Single Left" ; Define tool 1, left side tool (single extruder)
+G10 P5 X12.45 Y0 Z0 ; Tool 1, set axis offsets
+G10 P5 S0 R0 ; Tool 1, set active (S0) and standy temp (R) of 0
+-- end JAP uncommented
 
 T0 ; Automatic tool select
 
@@ -111,4 +115,4 @@ M586 P2 S0 ; Disable Telnet
 
 ; Comment: POSITIVE S values (in seconds) start extruder before motion system. When set too high there's not enough filamanet left to finish an extrude command, leaving gaps before a croner. NEGATIVE values delay extrusion until after movement has started. Too high leads to gaps after a corner -- AG
 
-M572 D0:1 S0.07 ; Extruder Pressure Advance 
+M572 D0:1 S0.07 ; Extruder Pressure Advance
