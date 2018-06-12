@@ -17,7 +17,7 @@ M564 H0 ; Disables Homing Requirement For Motor Activation
 M558 P4 I1 X0 Y0 Z1 H5 F100 T5000 ; Set Z probe type -- SET AS LIMIT SWITCH
 
 ; G31 P450 X-30.4 Y-30.7 Z2.6 ; Set Z probe (IR) trigger value and offset
-G31 P999 X40 Y-28.5 Z3.0 ; Set Z probe (limit switch) trigger value, offset
+G31 P999 X40 Y-28.5 Z2.6 ; Set Z probe (limit switch) trigger value, offset
 
 M557 X50:370 Y10:350 S30 ; Define heightmap mesh
 
