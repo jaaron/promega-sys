@@ -1,25 +1,23 @@
-; File "0:/gcodes/P_rook_compoundnozzle.gcode" resume print after print paused at 2018-06-09 10:02
+; File "0:/gcodes/CFDMP_Gerard-Casev3.gcode" resume print after print paused at 2018-06-14 23:48
 M140 P0 S60.0
-G10 P0 S205 R0
+G10 P1 S175 R175
+T1 P0
+G10 P0 S215 R215
 T0 P0
-G10 P3 S205 R-273
-T3 P0
-G10 P2 S215 R215
-T2 P0
 G29 S1
 M98 Presurrect-prologue.g
-M106 P0 S0.50
+M106 P0 S1.00
 M106 P1 S0.00
-M106 P2 S0.00
-M106 S127.50
+M106 P2 S1.00
+M106 S1.00
 M116
 M290 S0.000
 G92 E0.00000
 M83
-M23 0:/gcodes/P_rook_compoundnozzle.gcode
-M26 S559369 P0.000
-G0 F6000 Z15.200
-G0 F6000 X211.14 Y206.08
-G0 F6000 Z13.200
-G1 F3003.9
+M23 0:/gcodes/CFDMP_Gerard-Casev3.gcode
+M26 S1415928 P0.000
+G0 F6000 Z11.000
+G0 F6000 X255.33 Y145.01
+G0 F6000 Z9.000
+G1 F2400.0
 M24
