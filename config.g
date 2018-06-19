@@ -97,7 +97,7 @@ M563 P0 D1 H1 F2 S"Ktana Single Right" ; Define tool 0, right side tool (single 
 G10 P0 X0 Y0 Z0 ; Tool 0, set axis offsets
 G10 P0 S0 R0 ; Tool 0, set active (S0) & standy temp (R) of 0.
 M563 P1 D0 H2 F2 S"Ktana Single Left" ; Define tool 1, left side tool (single extruder)
-G10 P1 X12.0 Y0 Z0 ; Tool 1, set axis offsets
+G10 P1 X-12 Y0 Z0 ; Tool 1, set axis offsets
 G10 P1 S0 R0 ; Tool 1, set active (S0) and standy temp (R) of 0
 
 T0 ; Automatic tool select
