@@ -2,14 +2,14 @@
 ; called to home the Z axis
 ;
 
-; ============= PRE-HOMING SEQUENCE =====================
+; ============= PRE-HOMING =====================
 
 ; Ignore Machine boundaries
 M564 H0 S0
 
-; Disable mesh leveling while homing
-M561
-G29 S2
+; Turn off bed leveling during homing
+G29 S2 ; Does the same as M561!
+
 
 ; Switch to Origin Tool
 T0
@@ -18,32 +18,31 @@ T0
 G91
 
 ; Provide Z height clearance
-G1 Z10 F1200 S1
+G1 Z10 F750 S1
 
 
 ; ============ HOME Z ==============
 
 ; Rapid Z until limit switch triggers
-G0 Z450 F3000 S1
+G0 Z450 F1500 S1
 
 ; Back off to release limit switch
-G0 Z-6 F3000
+G0 Z-6 F1500
 
 ; Slow advance to trigger limit switch
 G0 Z10 F120 S1
 
-; Set this location as Z = 378.8mm
-G92 Z377 ;Z378.8
+M98 Pmachine_zendstop.g ; Set Z Endstop height
+
+; ============ Post-Homing ==============
 
 ; Revert to absolute coordinates
-G91
+G90
 
-;Re-enable mesh leveling
+; Re-enable mesh leveling
 G29 S1
 
-; Set Axes Limits
-M208 X0 Y0 Z-5 S1 ; Set axis minima
-M208 X371 Y385 Z377 S0 ; Set axis maxima
+M98 Pmachine_axisdimension.g ; Set Axes Limits
 
-; Stop movement across limits
-M564 H0 S1
+; Stop movement across limits, enable boundaries, homing requirement
+M564 H1 S1

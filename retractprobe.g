@@ -1,1 +1,1 @@
-; Probe retraction routine, not used for ProMega
+; Probe retraction routine, not used for ProMega (yet).
