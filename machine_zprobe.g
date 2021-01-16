@@ -15,7 +15,7 @@
 ;  1. Heat the bed to 60C and the nozzle to 150C
 ;  2. Move the head near the center with G1 X200 Y200
 ;  3. Move the bed near the nozzle with G1 Z20
-;  4. Disable the bed mesh with G29 S2
+;  4. Disable the bed mesh with G29 S2, do this twice
 ;  5. Move the bed in small steps so it just touches the nozzle, 1mm steps first, then 0.1mm steps
 ;  6. Set the Z0 position with G92 Z0
 ;  7. Move the bed back to Z20, with G1 Z20
@@ -25,10 +25,11 @@
 ; 11. Put the Z probe away if necessary
 
 ; Toggle by uncommenting, depending on preference
-; M558 P1 X0 Y0 Z1 H5 F120 T5000 	; Set Z probe type -- Enable IR_PROBE
-M558 P4 I1 X0 Y0 Z1 H5 F100 T5000 	; Set Z probe type -- Enable LIMIT SWITCH
+; M558 P1 X0 Y0 Z1 H5 F120 T5000  ; Set Z probe type -- Enable IR_PROBE
+M558 P4 I1 X0 Y0 Z1 H5 F100 T5000 ; Set Z probe type -- Enable LIMIT SWITCH
 
 ; Remember to update your Z-probe offset with the Z parameter below
 ; Follow this guide or the instructions above: http://promega.printm3d.com/books/user-manual/page/bed-leveling-probing#bkmrk-the-limit-switch-pro
-; G31 P450 X25 Y30 Z10.0 			; Set Z probe (IR) trigger value and offset
-G31 P999 X-52 Y30 Z10.0 				; Set Z probe (limit switch) trigger value, offset
+; G31 P450 X25 Y30 Z10.0   ; Set Z probe (IR) trigger value and offset
+; G31 P999 X-42 Y31 Z15.0  ; Set Z probe (Metrol switch) trigger value, offset.  X and Y offset need to be measured!
+G31 P999 X-52 Y30 Z10.0    ; Set Z probe (limit switch) trigger value, offset

@@ -9,7 +9,7 @@ M564 H0 S0
 
 ; Turn off bed leveling during homing
 G29 S2 ; Does the same as M561!
-
+G29 S2 ; Do it twice because once just isn't enough
 
 ; Switch to Origin Tool
 T0
@@ -27,12 +27,13 @@ G1 Z10 F750 S1
 G0 Z450 F1500 S1
 
 ; Back off to release limit switch
-G0 Z-6 F1500
+G0 Z-15 F1500
 
 ; Slow advance to trigger limit switch
-G0 Z10 F120 S1
+G0 Z20 F120 S1
 
 M98 Pmachine_zendstop.g ; Set Z Endstop height
+M98 Pmachine_zprobe.g   ; Set Z Probe distance
 
 ; ============ Post-Homing ==============
 
