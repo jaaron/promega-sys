@@ -6,8 +6,8 @@
 
 ; ============ HOME X & HOME Y ==============
 
-M98 Phomex.g ; Run the homex.g file, also homes the Y axis
+M98 P"homex.g" ; Run the homex.g file, also homes the Y axis
 
 ; ============ HOME Z ==============
 
-M98 Phomez.g ; Run the homez.g file
+M98 P"homez.g" ; Run the homez.g file

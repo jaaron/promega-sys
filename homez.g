@@ -18,22 +18,22 @@ T0
 G91
 
 ; Provide Z height clearance
-G1 Z10 F750 S1
+G1 Z10 F750 H1
 
 
 ; ============ HOME Z ==============
 
 ; Rapid Z until limit switch triggers
-G0 Z450 F1500 S1
+G0 Z450 F1500 H1
 
 ; Back off to release limit switch
 G0 Z-15 F1500
 
 ; Slow advance to trigger limit switch
-G0 Z20 F120 S1
+G0 Z20 F120 H1
 
-M98 Pmachine_zendstop.g ; Set Z Endstop height
-M98 Pmachine_zprobe.g   ; Set Z Probe distance
+M98 P"machine_zendstop.g" ; Set Z Endstop height
+M98 P"machine_zprobe.g"   ; Set Z Probe distance
 
 ; ============ Post-Homing ==============
 
@@ -43,7 +43,7 @@ G90
 ; Re-enable mesh leveling
 G29 S1
 
-M98 Pmachine_axisdimension.g ; Set Axes Limits
+M98 P"machine_axisdimension.g" ; Set Axes Limits
 
 ; Stop movement across limits, enable boundaries, homing requirement
 M564 H1 S1

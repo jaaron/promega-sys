@@ -20,18 +20,18 @@ T0
 G91
 
 ; Provide Z height clearance
-G1 Z10 F750 S1
+G1 Z10 F750 H1
 
 ; ================== HOME Y ============================
 
 ; Rapid Y until limit switch triggers
-G0 Y450 F1500 S1
+G0 Y450 F1500 H1
 
 ; Back off to release limit switch
 G0 Y-6 F1500
 
 ; Slow advance to trigger limit switch
-G0 Y10 F120 S1
+G0 Y10 F120 H1
 
 ; Set this location as Y = 384mm
 G92 Y384
@@ -42,13 +42,13 @@ G0 Y-5 F1200
 ; ============= HOME X ====================
 
 ; Rapid X until limit switch triggers
-G0 X450 F1500 S1
+G0 X450 F1500 H1
 
 ; Back off to release limit switch
 G0 X-6 F1500
 
 ; Slow advance to trigger limit switch
-G0 X10 F120 S1
+G0 X10 F120 H1
 
 ; Set this location as X = 380mm
 G92 X380
@@ -64,7 +64,7 @@ G90
 ; Re-enable mesh leveling
 G29 S1
 
-M98 Pmachine_axisdimension.g ; Set Axes Limits
+M98 P"machine_axisdimension.g" ; Set Axes Limits
 
 ; Stop movement across limits, enable boundaries, homing requirement
 M564 H1 S1

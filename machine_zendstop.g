@@ -32,4 +32,4 @@
 
 ; 8. Re-enable your bed leveling compensation with G29 S1
 ; Set this location as Z = 375.5mm (Normally the Default Factory Number)
-G92 Z380.5 ; With glass bed and Compound
+G92 Z374.45 ; With glass bed and Compound

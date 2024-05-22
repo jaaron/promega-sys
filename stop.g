@@ -7,7 +7,7 @@ G91 ; relative positioning
 G1 Z5 S1 F360 ; lower Z by 5mm, or until Z-limit is reached
 G90 ; absolute positioning
 G1 X350 Y350 F3000 ; go to X=350 Y=350 to move head out of the way (usually)
-M98 Phomez.g ; move Z to the bottom
+M98 P"homez.g" ; move Z to the bottom
 
 ; Turn off systems
 G10 P0 S0 R0
